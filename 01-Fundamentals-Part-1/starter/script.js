@@ -212,3 +212,5 @@ console.log('23'-'10'-'3'); //10
 let n = '1'+1; //11
 n = n-1; //10
 console.log(n); //10
+
+console.table('Hello');
