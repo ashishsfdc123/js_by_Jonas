@@ -213,4 +213,51 @@ let n = '1'+1; //11
 n = n-1; //10
 console.log(n); //10
 
-console.table('Hello');
+/**
+ * Truthy and Falsy values
+ * 
+ */
+//5 falsy values are: 0, undefined, null, ''(empty string), NaN
+//of course false is always false
+//all other values are truthy values
+//all non null and true values are truthy values be default
+//In code, the conversion automatically happens behind the scenes
+//when using logical operators
+//Or when using if else statements
+//can be used to check if variable is having any value or not
+console.log('Boolean value for 0 : '+Boolean(0)); //false
+console.log('Boolean value for undefine: '+Boolean('')); //false
+console.log('Boolean value for a string with value: '+Boolean('ashish')); //false
+
+
+let money=0;
+//In if statement, type coercion will happen
+//0 will become falsy value and hence
+//else statement will get executed
+if(money){
+   console.log('True:: Money is present');
+}
+else{
+   console.log('Money is not present as 0 is a falsy value');
+}
+
+/**
+ * Equality Operators
+ * == vs ===(double vs triple equals)
+ * == loose equality operator: performs type coercion and then check equality
+ * === strict equality operator: does not performs implicit type coercion
+ */
+
+let a1=2;
+let b1='2';
+//this will return true since the value of a1 and b1 is equal
+//double == will not consider type of values
+
+if(a1==b1){
+   console.log('a1=b2');
+}
+//this will be false because this will also check type
+if(a1===b1){
+   console.log('a1===b1');
+}
+
