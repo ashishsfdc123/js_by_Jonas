@@ -261,3 +261,161 @@ if(a1===b1){
    console.log('a1===b1');
 }
 
+const promptVal = prompt("Whats your favorite number? ");
+console.log("Prompt value is: "+promptVal);
+//lets check the type
+console.log("Type of prompt input is: "+typeof(promptVal));
+//since we are using ==, this will be true if promptVal is '123'
+if(promptVal==123){
+   console.log('Loose equal works fine');
+}
+//However with === strict equality operator, this will not work
+if(promptVal===123){
+   console.log('Loose equal works fine');
+}
+else{
+   console.log('False block for stict equality of prompVal');
+}
+
+/**
+ * Not Equal
+ * Also called different
+ * it also comes in two variants
+ * loose inequality != and strict in-equality !==
+ */
+const checkLooseInEquality = 9!='9';
+console.log(checkLooseInEquality); //false
+const checkStrictInEquality = 9!=='9';
+console.log(checkStrictInEquality); //true
+
+
+/**
+ * Boolean logic
+ * uses true or false values to compute the logic
+ * This is not specific to just js, present in all languages
+ */
+
+/**
+ * Boolean AND Operator &&
+ * Booean OR Operator   ||
+ * Boolean NOT operator !
+ * Not operator has precendence over AND and OR operator
+ */
+
+let hasDriversLicense = true;
+let hasGoodVisiion = true;
+
+//AND operator &&
+//true
+console.log('A AND B: '+(hasDriversLicense && hasGoodVisiion));
+//false
+hasGoodVisiion = false;
+console.log('A and B: '+(hasDriversLicense && hasGoodVisiion));
+
+//OR operator
+console.log('A OR B: '+(hasDriversLicense || hasGoodVisiion));
+
+//NOT operator
+console.log('Not A: '+(!hasDriversLicense)); //false
+
+//if driver license and good vision
+const shouldDrive = hasDriversLicense && hasGoodVisiion;
+console.log('Should drive is: '+shouldDrive); //true AND false = false
+
+/**
+ * Switch statement
+ * Alternative way of writing the multiple if else statements
+ * Mapping activity based on each day
+ * Code becomes readable, easier to understand
+ */
+const day = 'Day';
+switch(day){
+   case 'Monday': 
+      console.log("Perform team routine on Monday");
+      break;
+   case 'Tuesday':
+      console.log('Perform Herbal Shampoo on Tuesday');
+      break;
+   case 'Wednesday':
+   case 'Thursday':
+      console.log('This is executed for both Wednesday and Thursday');
+      console.log('Reason is missing break statement');
+   case 'Friday':
+      console.log('Enjoy the Friday');
+   default:
+      console.log('This is default and does not require break');
+}
+
+/**
+ * Statements and Expressions
+ * Expression is something that produces a value
+ * like 3+4 will result in 7, so 3+4 is an expression
+ * 1991, just a simple value, is also an expression
+ * Statements are like sentences and
+ * expressions are the words that make up the sentences
+ * Like declaring the variable is a statement let hi = 'Hi';
+ * 
+ * 
+ * A single value like 100 or any operation that produces result
+ * like 'Hello' gives Hello, 23 gives 23, 5*10 gives 50
+ * Expression can contain other expressions like
+ * (5*2)+10
+ * 
+ * Statement: A program contains multiple statements
+ * These are step by step instructions to solve an issue
+ * Statements often consists of slots in which we fit expressions
+ * like let a = 20;
+ * Here 20 is expression and the complete line is a statement
+ * 
+ * How to know if its an expression or statement
+ * Try to console.log the given expression or statement
+ * if result is given, its an expression
+ * 
+ * Expression cant exist on their own. They should always be put in statements
+ * 
+ */
+if(23>10){
+   console.log('23 is bigger than 10');
+}
+
+/**
+ * The Ternary Operator
+ * This is also called conditional operator
+ * Allows to write something similar to if else but in one line
+ * Expression? If statements:Else statements
+ * All are mandatory including 
+ * expression, if block after ? and else block after :
+ * Using Ternary Operator we can have 
+ * conditional literals inside template literals
+ * THis is not replacement of If Else, 
+ * but simple way of writing simple If Else
+ * 
+ * For complex logic we still need If Else Statements
+ */
+const ternaryAge = 17;
+//This returns Age greater than 18
+ternaryAge>=18 
+   ? console.log('Age greater than 18')
+   : console.log('Age less than 18');
+
+//This returns Teenage
+console.log(`I am ${ternaryAge>18? 'Adult': 'Teenage'}`);
+
+/**
+ * javascript Releases
+ * History of JS: 
+ * To make web pages more responsive, a language was needed
+ * A language was needed to perform calculation at client side
+ * Mocha was developed by Netscape navigator in just 10 days
+ * This language had features of modern Javascript
+ * Later on this was renamed to Live Script and finally to Javascript
+ * Java in Javascript was for marketing since Java was hot at that time
+ * 1996, MS launched Internet Explorer, which copied JS from Javascript
+ * They copied and named it JScript
+ * People then realized there should be a standard for the JS language
+ * SO ECMA came into picture, to give standardization to JS
+ * and soon ES1 was released.
+ * ES6 launched in 2015 was the biggest release to JS.
+ * ES6 is also called ES-2015(in 2015 ECMA script changed to annual release cycle)
+ * Backward compatibility all the way to ES1.
+ */
