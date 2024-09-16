@@ -126,3 +126,71 @@ const newJuiceReturned = newFruitProcessor(2,2);
 //new Juice returned is: Juice with 8 pieces of apple and 8 orange pieces
 console.log('new Juice returned is: '+newJuiceReturned);
 
+/**
+ * Intro to Arrays
+ * Arrays in js are data structures
+ * A big container into which we can save values
+ * and later on retrieve the values
+ * Arrays and Objects are two important data structures
+ * Array can hold values of multiple types like Strings and numbers
+ * []: this is called literal syntax
+ * we can also create arrays using new Keyword
+ * const myArr = new Array(1,2,'Test')
+ * Arrays are indexed based data structures
+ */
+const friend1 = 'friend1';
+const friend2 = 'friend2';
+const friend3 = 'friend3';
+const friends = [friend1, friend2, friend3];
+//Friends array is: friend1,friend2,friend3
+console.log('Friends array is: '+friends);
+//To fetch first elements
+console.log('First Element is: '+friends[0]);
+
+//Get count of elements in array
+//Length of array is: 3
+console.log('Length of array is: '+friends.length);
+
+//while retrieving we can use any expression inside square brackets
+//fetch the last element of array using the length property
+console.log(friends[friends.length-1]);
+function myIndex(){
+    return 1;
+}
+
+//we can even pass a method inside the square bracket
+//which returns a value
+// ****** any expression that returns a value can be used
+//return friend2
+console.log(friends[myIndex()]);
+
+//the square bracket is not just for retrieving the elements
+//we can even change or mutate the array using []
+friends[2] = 'Value Changed';
+console.log(friends[2]); //Value Changed
+
+//Though array was declared as const
+//its values can be changed
+//the const rule applies only to primitives
+//but array essentially is an object in js
+//and its values are properties and can be changed
+//what we cannot do is replace entire array
+//friends = [1,2,,3]; Assignment to constant variable error will come
+
+//Array with values of different types
+const myDetailsArray = ['Ashish', 'Infy', 2023, 12345, true];
+//['Ashish', 'Infy', 2023, 12345, true]
+console.log(myDetailsArray);
+
+//we can put one array into another
+const arr1 = [friends, myDetailsArray];
+console.log(arr1);
+
+/**
+ * Basic Array Operations
+ */
+
+//push: add element to end of array
+const myArr1 = [1,2,3];
+myArr1.push(4);
+console.log(myArr1); //[1, 2, 3, 4]
