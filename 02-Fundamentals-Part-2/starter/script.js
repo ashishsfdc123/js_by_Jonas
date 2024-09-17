@@ -191,6 +191,38 @@ console.log(arr1);
  */
 
 //push: add element to end of array
+//push returns the length of the array
 const myArr1 = [1,2,3];
 myArr1.push(4);
 console.log(myArr1); //[1, 2, 3, 4]
+
+const newLength = myArr1.push(5);
+console.log(newLength); //output is 5
+
+
+//adding element to the beginning of array
+//unshift method
+//also returns the length of new array
+myArr1.unshift('First');
+console.log(myArr1); //['First', 1, 2, 3, 4, 5]
+
+//remove elements from array
+//pop method: removes the last element of the array
+//returns the removed element
+myArr1.pop(); //will remove 5 from array
+console.log(myArr1);//['First', 1, 2, 3, 4]
+
+//shift: removes first element from array
+//returns the f(irst value) removed from the array
+const shiftedVal = myArr1.shift();
+console.log(myArr1); //[1, 2, 3, 4]
+console.log(shiftedVal); //First
+
+//index of: returns the index of the first matching element
+console.log(myArr1.indexOf(1)); //0
+console.log(myArr1.indexOf('test')); //-1 for non existing array element
+
+//includes: more modern way of checking if an element exists
+console.log(myArr1.includes(2)); //true
+console.log(myArr1.includes('test')); //false
+
