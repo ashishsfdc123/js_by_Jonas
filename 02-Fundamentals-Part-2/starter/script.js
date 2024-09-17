@@ -226,5 +226,5 @@ console.log(myArr1.indexOf('test')); //-1 for non existing array element
 console.log(myArr1.includes(2)); //true
 console.log(myArr1.includes('test')); //false
 
-
+console.log('Hi');
 
