@@ -226,5 +226,80 @@ console.log(myArr1.indexOf('test')); //-1 for non existing array element
 console.log(myArr1.includes(2)); //true
 console.log(myArr1.includes('test')); //false
 
-console.log('Hi');
+/**
+ * Introduction to objects
+ * Arrays can only be retrieved by index
+ * We cannot use key value pairs in arrays
+ * So we have object
+ * each of key is also called property
+ * 
+ * Object are one of the fundamental concepts in js
+ * There are multiple ways of creating objects
+ * {} curly braces are called literal syntax for creating objects
+ * The order of objects does not matter in objects
+ * whereas in arrays to access elements the order is important
+ * 
+ * The member access has very high priority in expression(dot property)
+ * The computed member access also has high priority([] notation for getting property)
+ * 
+ * 
+ */
+const ashishArray = ['Ashish', 'sharma', 2020-2018, 'teacher', ['Aman','Nitin']];
+console.log(ashishArray);
 
+const ashishObj = {
+    firstName: "Ashish",
+    lastName: 'Sharma',
+    empNo: '123',
+    company: 'Infosys Limited',
+    joining_year: 2023
+}
+//{firstName: 'Ashish', lastName: 'Sharma', empNo: '123', company: 'Infosys Limited', joining_year: 2023}
+console.log(ashishObj);
+
+//Dot vs bracket notation
+//we use bracket notation when key contains spaces
+//we can pass any expression in bracket notation, even a function
+console.log(ashishObj.firstName); //Ashish
+console.log(ashishObj["firstName"]); //Ashish
+
+//if we get any non existent property, we get undefined
+console.log(ashishObj.newName);
+
+//adding new property
+ashishObj.location = 'Chandigarh';
+console.log(ashishObj); //location will be added to the object
+
+/**
+ * Object Methods: adding functions to objects
+ */
+const ashishObj2 = {
+    firstName: "Ashish",
+    lastName: 'Sharma',
+    empNo: '123',
+    company: 'Infosys Limited',
+    joining_year: 2023,
+    birthYear: 1990,
+    hasDriversLicense: true,
+    profession: 'Consultant',
+    calcAge: function(){
+        //we can also use ashishObj2.birthYear
+        //that is with name of object
+        //but using this, simplifies the code if obj name changes
+        //its good idea to reference the obj using this rather than hardcoding the name
+        this.age = 2024-this.birthYear;
+        return this.age;
+    },
+    getSummary: function(){
+        return `${this.firstName} is a ${this.profession} aged ${this.calcAge()}`;
+    }
+}
+const ageAshish = ashishObj2.calcAge();
+//using dot property
+console.log(ageAshish); //34
+//using [] notation
+console.log(ashishObj2['calcAge']()); //34
+console.log(ashishObj2.age); //34
+
+//Ashish is a Consultant aged 34
+console.log(ashishObj2.getSummary());
