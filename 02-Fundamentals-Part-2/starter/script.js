@@ -372,3 +372,17 @@ for(let i=ashishArr.length-1;i>=0;i--){
     console.log(ashishArr[i]);
 }
 
+//WHILE Loop
+//used when we dont need to depend on counter
+let i=0;
+while(i<ashishArr.length){
+    console.log(ashishArr[i]);
+    i++;
+}
+
+let dice = Math.trunc(Math.random()*6)+1;
+console.log('Dice is: '+dice);
+while(dice!==6){
+    console.log(dice);
+    dice++;
+}
