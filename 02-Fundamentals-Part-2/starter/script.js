@@ -303,3 +303,72 @@ console.log(ashishObj2.age); //34
 
 //Ashish is a Consultant aged 34
 console.log(ashishObj2.getSummary());
+
+/**
+ * Loops: Fundamental aspect of every language
+ * Helps to perform repititive tasks
+ * Lets take an example of Gym
+ * You might take 10 reps of a particular exercise
+ * Lifting Rep 1
+ * Liftting Rep 2
+ * --------
+ * Liftfint Rep 10
+ * 
+ * Loops help to solve this issue just with 3 lines
+ */
+for(let i=1;i<=10;i++){
+    console.log("Lifting Rep: "+i);
+}
+
+/**
+ * Loop Through Arrays
+ * Lets print the value of each element of the Array
+ */
+const ashishArr = [
+    'Ashish',
+    'Sharma',
+    2024-1990,
+    'Software Dev',
+    ['Michael','Slater','Steven']
+];
+for(let i=0;i<ashishArr.length;i++){
+    console.log(`The array element at index ${i} is ${ashishArr[i]}, ${typeof(ashishArr[i])}`);
+}
+
+//Lets create a new array from this array, which will contain type of each element
+const typeArray = [];
+for(let i=0;i<ashishArr.length;i++){
+    typeArray.push(typeof(ashishArr[i]));
+}
+//Type Array is string,string,number,string,object
+console.log(`Type Array is ${typeArray}`);
+
+/**
+ * continue and break statement
+ * Continue: skip current iteration and move to next iteration
+ * Break: break the loop and come out of this
+ */
+
+//lets use continue to log only string values in the array using continue
+for(let i=0;i<ashishArr.length;i++){
+    if(typeof(ashishArr[i])!=='string'){
+        continue;
+    }
+    console.log(typeof(ashishArr[i])); 
+}
+
+//Break: completely terminate whole loop
+//lets break loop after we found a number
+for(let i=0;i<ashishArr.length;i++){
+    console.log(ashishArr[i]);
+    if(typeof(ashishArr[i])=='number'){
+        console.log('Number found');
+        break;
+    }
+}
+
+//Looping arrays backwards
+for(let i=ashishArr.length-1;i>=0;i--){
+    console.log(ashishArr[i]);
+}
+
