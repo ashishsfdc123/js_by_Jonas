@@ -220,7 +220,7 @@ function deleteShoppingCart() {
  *
  * When we call the method(function in object), this points to the object containing the function
  *
- * In a simple function call this points to the window in strict mode else undefined(non strict mode)
+ * In a simple function call this points to the undefined in strict mode else window object(non strict mode)
  *
  * In arrow functions: arrow functions do not get their own this function. Instead the this keyword in arrow functions points to the surrounding function.
  * This is called the lexical this.
@@ -267,3 +267,74 @@ const matilda = {
 };
 matilda.calcAge3 = ashish.calcAge3;
 matilda.calcAge3();
+
+/**
+ * Regular functions vs arrow functions
+ */
+
+const ashi = {
+	firstName: 'Ashish',
+	year: 1989,
+	calcAge: function () {
+		console.log(this);
+		console.log(2024 - this.year);
+		const isMillenial = function () {
+			console.log(this.year > 1981 && this.year < 1990);
+		};
+		isMillenial();
+	},
+	greet: () => console.log(`Hey ${this.firstName}`),
+};
+
+//firstName will be undefined in arrow function
+//because the arrow function this will point to window object(parent object)
+ashi.greet(); //Hey undefined
+
+//ashi.calcAge();
+
+function printThis() {
+	console.log('Value of this in regular function call: ' + this);
+}
+//Value of this in regular function call: undefined
+printThis();
+
+/**
+ * Primitives vs Objects
+ * Primitives vs Ref Types
+ *
+ * Engine has two components, call stack and heap
+ * objects are stored in memory heap
+ * primitive types are stored directly in call stack that is the execution context
+ */
+let age = 30;
+let oldAge = age;
+age = 31;
+console.table(age, oldAge); //31,30
+
+const mee = {
+	name: 'Ashish',
+	age: 30,
+	family: ['Fam1', 'Fam2'],
+};
+
+const friend = mee;
+friend.age = 20;
+console.log(mee.age, friend.age); //both will be 20
+
+/**
+ * Object.assign: Used to merge two objects
+ * A new object is created, ref is not shared.
+ * So changing value in the copied object, does not change the original object
+ * This object.assign only works on top level object.
+ * If there are nested objects, the inner objects are still shared by reference
+ * this is called shallow cloning
+ */
+const mee2 = Object.assign({}, mee);
+mee2.name = 'Sharma';
+
+//If I log both the names from mee and mee2, the names will be different
+console.log(mee.name); //Ashish
+console.log(mee2.name); //Sharma
+mee2.family[2] = 'Fam3'; //we added only to mee2 object
+console.log(mee.family); //will also contain fam3 because of shallow clone
+console.log(mee2.family); //will also contain fam3
